@@ -19,12 +19,12 @@ function modifyPlayer(){
 
 function startGame() {
   start.innerHTML = "Restart Game!";
+  counter = 0;
   for (let i = 0; i < squares.length; i++) {
     squares[i].textContent = "";
     squares[i].addEventListener("click", draw);
     currentPlayer = "X";
     modifyPlayer();
-    counter = 0;
   }
 }
 
@@ -64,7 +64,7 @@ function checkWinner(){
     startGame()
     score2.innerHTML++;
   }
-  else if(counter == 9 && winnerX()==false && winnerO()==false){
+  else if(counter == 9){
     alert("Game Tied. GG!");
     startGame()
   }
